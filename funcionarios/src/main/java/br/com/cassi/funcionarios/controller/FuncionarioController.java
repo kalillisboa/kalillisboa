@@ -32,7 +32,7 @@ public class FuncionarioController {
 		model.addAttribute("Funcionario", funcionariosLista);
 		return "funcionarios/listarFuncionario";
 		 
-	}
+	 }
 	
 	
 	@GetMapping("cadastrarfuncionario")
