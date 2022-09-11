@@ -21,20 +21,45 @@
 		<input type="text" id="termo_nomeacao" name="termo_nomeacao"><br> 
 		<label for="observacoes">Observações</label>
 		<input type="text" id="observacoes" name="observacoes"><br>
-		<label for="squad_nome">Squad id:</label> 
-		<input type="text" id="squad_nome" name="squad_nome" Value="0"><br> 
+		
 		<label for="posicao">Posição: </label> 
 		<input type="text" id="posicao"	name="posicao"><br>
-		<label for="empresa_nome">Empresa id: </label> 
-		<input type="text" id="empresa" name="empresa_nome"><br>
-		<label for="cargo_nome">Cargo id: </label>
-		<input type="text" id="cargo_nome" name="cargo_nome"><br> 
-			
+		
+		<label for="tipo_funcionario">Tipo Funcionario: </label> 
+		<input type="text" id="tipo_funcionario"	name="tipo_funcionario"><br>
+		
+	
+		<label for="cargo">Cargo: </label>
+		  <select name="cargo" >
+		  <option name="cargo" th:each="cargolista : ${Cargo}" th:value="${cargolista.id_cargo}" th:text="${cargolista.nome_cargo}" /></option>
+		</select>
+		<br>
+		
+		<label for="empresa">Empresa: </label>
+		 
+		 
+		 <select name="empresa" >
+		  <option name="empresa" th:each="empresalista : ${Empresa}" th:value="${empresalista.id_empresa}" th:text="${empresalista.nome_empresa}"  /></option>
+		</select>
+		<br>
+		
+
+	<label for="empresa">Squad: </label>
+	
+		 <select name="squad" >
+		 	<option name="squad" value="0" /></option>
+		  <option name="squad" th:each="squadlista : ${Squad}" th:value="${squadlista.id_squad}" th:text="${squadlista.nome_squad}"  /></option>
+		</select>
+	
+	<br>
 			<input	type="submit" value="Cadastrar">
+
 
 	</form>
 
-	<br>
+		
+
+
 
 
 

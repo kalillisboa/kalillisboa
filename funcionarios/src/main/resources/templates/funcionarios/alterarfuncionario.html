@@ -13,31 +13,49 @@
 
 	<h1>Alterar Funcionario</h1>
 
-	<form action="../novofuncionario" method="post" th:object="${funcionario}">
+	<form action="novofuncionario" method="post">
 
-
-		<input type="hidden" id="id_funcionario" name="id_funcionario" value= "" th:value="${funcionario.id_funcionario}"><br> 
 		<label for="nome">Nome Funcionario:</label> 
-		<input type="text" id="nome" name="nome" value= "" th:value="${funcionario.nome_funcionario}"><br> 
+		<input type="text" id="nome" name="nome" th:value="${funcionario.id_funcionario}"><br> 
 		<label for="termo_nomeacao">Termo de Nomeação:</label> 
-		<input type="text" id="termo_nomeacao" name="termo_nomeacao" value="" th:value="${funcionario.termo_nomeacao}" ><br> 
+		<input type="text" id="termo_nomeacao" name="termo_nomeacao" th:value="${funcionario.nome_funcionario}"><br> 
 		<label for="observacoes">Observações</label>
-		<input type="text" id="observacoes" name="observacoes" value="" th:value="${funcionario.observacoes}"><br>
-		 <label for="posicao">Posição: </label> 
-		<input type="text" id="posicao"	name="posicao" value="" th:value="${funcionario.posicao}"><br>
-		<label for="cargo_nome">Cargo Id: </label> 
-		<input type="text" id="cargo_nome"	name="cargo_nome" value="" th:value="${funcionario.cargo.id_cargo}"><br>
+		<input type="text" id="observacoes" name="observacoes" th:value="${funcionario.observacoes}"><br>
 		
-		<label for="empresa_nome">Empresa Id: </label> 
-		<input type="text" id="empresa_nome"	name="empresa_nome" value="" th:value="${funcionario.empresa.id_empresa}"><br>
-		<label for="squad_nome">Squad Id: </label> 
-		<input type="text" id="squad_nome"	name="squad_nome"  th:value="${funcionario?.squad?.id_squad}" ><br>
-			
-			<input	type="submit" value="Salvar">
+		<label for="posicao">Posição: </label> 
+		<input type="text" id="posicao"	name="posicao" th:value="${funcionario.posicao}"><br>
+	
+		<label for="cargo_nome">Cargo id: </label>
+		<input type="text" id="cargo_nome" name="cargo_nome" th:value="${funcionario.cargo.id_cargo}"><br> 
+		
+		<label for="empresa">Empresa: </label>
+		
+		 
+		 
+		 <select name="empresa" >
+		  <option name="empresa" th:value="${funcionario.empresa.id_empresa}" th:text="${funcionario.empresa.nome_empresa}"  /></option>
+		  <option name="empresa" th:each="empresalista : ${Empresa}" th:value="${empresalista.id_empresa}" th:text="${empresalista.nome_empresa}"  /></option>
+		</select>
+		<br>
+		
+
+	<label for="empresa">Squad: </label>
+	
+		 <select name="squad" >
+		 	<option name="squad" value="0" /></option>
+		 	 <option name="squad" th:value="${funcionario.squad.id_squad}" th:text="${funcionario.squad.nome_squad}"  /></option>
+		  <option name="squad" th:each="squadlista : ${Squad}" th:value="${squadlista.id_squad}" th:text="${squadlista.nome_squad}"  /></option>
+		</select>
+	
+	<br>
+			<input	type="submit" value="Cadastrar">
+
 
 	</form>
 
-	<br>
+		
+
+
 
 
 

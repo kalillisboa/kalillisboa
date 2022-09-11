@@ -12,30 +12,15 @@ public class RequisicaoFuncionario {
 
 	private String termo_nomeacao;
 	private String observacoes;
-	
-
-	private String squad_nome;
+	private Empresa empresa;
+	private Squad squad;
+	private Cargo cargo;
 	private int posicao;
-	private String cargo_nome;
+	
 	private String nome;
-	private String empresa_nome;
+	
 	private Long id_funcionario;
-
-	public Long getId_funcionario() {
-		return id_funcionario;
-	}
-
-	public void setId_funcionario(Long id_funcionario) {
-		this.id_funcionario = id_funcionario;
-	}
-
-	public String getCargo_nome() {
-		return cargo_nome;
-	}
-
-	public void setCargo_nome(String cargo_nome) {
-		this.cargo_nome = cargo_nome;
-	}
+	
 
 	public String getTermo_nomeacao() {
 		return termo_nomeacao;
@@ -53,13 +38,41 @@ public class RequisicaoFuncionario {
 		this.observacoes = observacoes;
 	}
 
-	public String getSquad_nome() {
-		return squad_nome;
+	public Cargo getCargo() {
+		return cargo;
 	}
 
-	public void setSquad_nome(String squad_nome) {
-		this.squad_nome = squad_nome;
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
 	}
+
+	
+	
+	public Squad getSquad() {
+		return squad;
+	}
+
+	public void setSquad(Squad squad) {
+		this.squad = squad;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public Long getId_funcionario() {
+		return id_funcionario;
+	}
+
+	public void setId_funcionario(Long id_funcionario) {
+		this.id_funcionario = id_funcionario;
+	}
+
+	
 
 	public int getPosicao() {
 		return posicao;
@@ -69,14 +82,7 @@ public class RequisicaoFuncionario {
 		this.posicao = posicao;
 	}
 
-	public String getCargo() {
-		return cargo_nome;
-	}
-
-	public void setCargo(String cargo_nome) {
-		this.cargo_nome = cargo_nome;
-	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -85,13 +91,7 @@ public class RequisicaoFuncionario {
 		this.nome = nome;
 	}
 
-	public String getEmpresa_nome() {
-		return empresa_nome;
-	}
 
-	public void setEmpresa_nome(String empresa_nome) {
-		this.empresa_nome = empresa_nome;
-	}
 
 	public Funcionario toFuncionario() {
 		
@@ -103,35 +103,17 @@ public class RequisicaoFuncionario {
 		funcionario.setPosicao(posicao);
 		funcionario.setTermo_nomeacao(termo_nomeacao);
 
-		Empresa empresa = new Empresa();
-
-		empresa.setId_empresa(Long.parseLong(empresa_nome));
-
+		
+		
 		funcionario.setEmpresa(empresa);
 		
-		Cargo cargo = new Cargo();
-
-		cargo.setId_cargo(Long.parseLong(cargo_nome));
-
 		funcionario.setCargo(cargo);
-		
-		
-		
-		
-		if(this.squad_nome.equals("0")) {
-		
-			this.squad_nome= null;
-			return funcionario;
-		}
-		else
-		{
-			
-		Squad squad = new Squad();
 
-			squad.setId_squad(Long.parseLong(squad_nome));
-			funcionario.setSquad(squad);
-			return funcionario;
-		}
+				
+		funcionario.setSquad(squad);
+		
+		return funcionario;
+		
 		
 		
 			
@@ -148,36 +130,19 @@ public class RequisicaoFuncionario {
 		funcionario.setPosicao(posicao);
 		funcionario.setTermo_nomeacao(termo_nomeacao);
 
-		Empresa empresa = new Empresa ();
-		
-		empresa.setId_empresa(Long.parseLong(empresa_nome));
-		
 		funcionario.setEmpresa(empresa);
 			
-		Cargo cargo = new Cargo();
-
-		cargo.setId_cargo(Long.parseLong(cargo_nome));
-
+		
 		funcionario.setCargo(cargo);
 		
-
-		
-		if(funcionario.getSquad() == null) {
+		funcionario.setSquad(null);
 			
-			this.squad_nome= null;
-			return funcionario;
-		}
-		else
-		{
-			
-			Squad squad = new Squad();
-
-			squad.setId_squad(Long.parseLong(squad_nome));
-			funcionario.setSquad(squad);
-			return funcionario;
+		funcionario.setSquad(squad);
 		
-		}
-
+		
+	return funcionario;
 	}
+
+	
 
 }

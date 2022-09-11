@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../static/css/reset.css"
+	th:href="@{/css/reset.css}">
+<link rel="stylesheet" href="../static/css/index.css"
+	th:href="@{/css/index.css}">
+
+<title>Home</title>
+
+
+</head>
+
+
+<body>
+
+
+	<header> </header>
+
+
+	<nav>
+
+
+		<a class="itensnav" href="/funcionarios/listarFuncionario">Funcionarios</a>
+
+		<a class="itensnav" href="/squad/listarsquad">Squads</a>
+		
+		 <a class="itensnav" href="/empresa/listarempresa">Empresas</a> 
+		 
+		 <a	class="itensnav" href="/cargo/listarcargo">Cargos</a>
+
+
+
+	</nav>
+
+
+
+
+
+
+	<div th:each="funcionarioslista : ${Funcionario}">
+
+		<table border="1px">
+
+
+
+
+
+			<tr>
+
+				<td>
+					<div>
+						ID Funcionario:<span th:text="${funcionarioslista.id_funcionario}">
+						</span>
+					</div>
+					<div>
+						Nome Funcionario:<span
+							th:text="${funcionarioslista.nome_funcionario}"> </span>
+					</div>
+					<div>
+						Termo de Nomeação:<span
+							th:text="${funcionarioslista.termo_nomeacao}"> </span>
+					</div>
+					<div>
+						Observações:<span th:text="${funcionarioslista.observacoes}">
+						</span>
+					</div>
+					<div>
+						Posição:<span th:text="${funcionarioslista.posicao}"> </span>
+					</div>
+					<div>
+						Nome da Squad:<span
+							th:text="${funcionarioslista?.squad?.nome_squad}"> </span>
+					</div>
+					<div>
+						Nome da Empresa:<span
+							th:text="${funcionarioslista.empresa.nome_empresa}"> </span>
+					</div>
+					<div>
+						Nome do Cargo:<span
+							th:text="${funcionarioslista.cargo.nome_cargo}"> </span>
+					</div>
+					<div>
+						Nível do Cargo:<span
+							th:text="${funcionarioslista.cargo.nivel_cargo}"> </span>
+					</div>
+					<div>
+						Step Cargo:<span th:text="${funcionarioslista.cargo.step_cargo}">
+						</span>
+					</div>
+					<div>
+						Valor da Hora: R$<span
+							th:text="${funcionarioslista.cargo.valor_hora}"> </span>
+					</div>
+					<div>
+						Faturamento: R$<span
+							th:text="${funcionarioslista.cargo.faturamento_cargo}"> </span>
+					</div>
+					<div>
+						Tipo do Cargo: <span
+							th:text="${funcionarioslista.cargo.tipo_cargo}"> </span>
+					</div> <br>
+
+				</td>
+
+
+
+				<td><a
+					th:href="@{alterar/{id}(id=${funcionarioslista.id_funcionario})}"><button>Alterar</button></a>
+
+
+					<a
+					th:href="@{deletar/{id}(id=${funcionarioslista.id_funcionario})}"><button>Excluir</button></a>
+
+				</td>
+
+
+			</tr>
+
+
+
+
+
+		</table>
+	</div>
+
+
+
+
+
+</body>
+
+
+</html>

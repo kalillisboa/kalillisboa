@@ -91,7 +91,6 @@ public class RequisicaoCargo {
 
 			cargo.setId_cargo(id_cargo);
 			cargo.setNome_cargo(nome_cargo);
-			cargo.setTipo_cargo(tipo_cargo);
 			cargo.setNivel_cargo(nivel_cargo);
 			cargo.setStep_cargo(step_cargo);
 			cargo.setValor_hora(valor_hora);
@@ -106,7 +105,6 @@ public class RequisicaoCargo {
 		Cargo cargo = repositorio.getReferenceById(id_cargo);
 		
 		cargo.setNome_cargo(nome_cargo);
-		cargo.setTipo_cargo(tipo_cargo);
 		cargo.setNivel_cargo(nivel_cargo);
 		cargo.setStep_cargo(step_cargo);
 		cargo.setValor_hora(valor_hora);

@@ -1,0 +1,30 @@
+body{
+	
+	background:#FBFCFA;
+}
+
+header  {
+	
+
+	width: 940px;
+	height: 500px;
+	background: url("../images/imgtopo.jpg")  center ;
+	background-size: 100%;
+	margin: 0 auto;
+}
+
+
+nav{
+	
+	display:flex;
+	width: 940px;
+	text-align:  center;
+	border: solid 1px;
+	margin: 0 auto;
+	font-size:30px;
+	flex-direction: row;
+	justify-content: space-around;
+	
+	
+}
+

@@ -1,5 +1,7 @@
 package br.com.cassi.funcionarios.model;
 
+import java.util.Optional;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,11 +15,12 @@ public class Funcionario {
 	private String termo_nomeacao;
 	private String observacoes;
 	private Integer posicao;
-
-
 	
 
 	
+
+	
+
 
 	public Long getId_funcionario() {
 		return id_funcionario;
@@ -60,7 +63,7 @@ public class Funcionario {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "cargo_id", nullable = true, referencedColumnName = "id_cargo")
+	@JoinColumn(name = "cargo_id", nullable = false, referencedColumnName = "id_cargo")
 	private Cargo cargo;
 
 	public void setCargo(Cargo cargo) {
@@ -84,7 +87,7 @@ public class Funcionario {
 	}
 
 	@ManyToOne
-	@JoinColumn(name = "squad_id", nullable = true, referencedColumnName = "id_squad")
+	@JoinColumn(name = "squad_id", updatable = true , nullable = true, referencedColumnName = "id_squad")
 	private Squad squad;
 
 	
@@ -100,5 +103,12 @@ public class Funcionario {
 		return squad;
 		
 	}
+
+	
+	@ManyToOne
+	@JoinColumn(name = "tipo_funcionario_id", nullable = false, referencedColumnName = "id_tipo_funcionario")
+	private TipoFuncionario tipoFuncionario;
+	
+	
 
 }

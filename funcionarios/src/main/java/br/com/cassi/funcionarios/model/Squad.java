@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Squad {
 
 		@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+		@Column(insertable = false, nullable= true)
 		private Long id_squad;
 		
 		private String nome_squad; 

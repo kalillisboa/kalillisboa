@@ -24,19 +24,13 @@ public class Cargo {
 	@Column(insertable = false, updatable = false)
 	private float faturamento_cargo;
 
-	private String tipo_cargo;
 
 	public void setFaturamento_cargo(float faturamento_cargo) {
 		this.faturamento_cargo = faturamento_cargo;
 	}
 
-	public String getTipo_cargo() {
-		return tipo_cargo;
-	}
 
-	public void setTipo_cargo(String tipo_cargo) {
-		this.tipo_cargo = tipo_cargo;
-	}
+	
 
 	public List<Funcionario> getFuncionarioList() {
 		return funcionarioList;
