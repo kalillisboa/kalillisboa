@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listar Cargo</title>
+
+
+</head>
+
+
+
+<body>
+
+	<h1>Lista de Cargos</h1>
+
+	
+
+
+
+
+		<div th:each="cargolista : ${Cargo}">
+
+			<table border="1px">
+
+				<tr>
+					<td>
+						<div>
+							Nome do cargo: <span th:text="${cargolista.nome_cargo}"></span>
+						</div>
+						<div>
+							Tipo do cargo: <span th:text="${cargolista.tipo_cargo}"></span>
+						</div>
+						<div>
+							Nivel do cargo: <span th:text="${cargolista.nivel_cargo}"></span>
+						</div>
+						<div>
+							Step do cargo: <span th:text="${cargolista.step_cargo}"></span>
+						</div>
+						<div>
+							Valor da hora: R$ <span th:text="${cargolista.valor_hora}"></span>
+						</div>
+						<div>
+							Faturamento: R$ <span th:text="${cargolista.faturamento_cargo}"></span>
+						</div> <br>
+						</td>
+						<td>
+						<a th:href ="@{alterar/{id}(id=${cargolista.id_cargo})}"><button>Alterar</button></a>
+						<a th:href ="@{deletar/{id}(id=${cargolista.id_cargo})}"><button>Excluir</button></a>
+						</td>
+				</tr>
+
+			</table>
+			
+		</div>
+		
+</body>
+
+
+
+</html>
