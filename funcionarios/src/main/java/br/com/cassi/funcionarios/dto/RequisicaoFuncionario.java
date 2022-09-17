@@ -1,11 +1,10 @@
 package br.com.cassi.funcionarios.dto;
 
-
-
 import br.com.cassi.funcionarios.model.Cargo;
 import br.com.cassi.funcionarios.model.Empresa;
 import br.com.cassi.funcionarios.model.Funcionario;
 import br.com.cassi.funcionarios.model.Squad;
+import br.com.cassi.funcionarios.model.TipoFuncionario;
 import br.com.cassi.funcionarios.repository.FuncionarioRepository;
 
 public class RequisicaoFuncionario {
@@ -16,11 +15,19 @@ public class RequisicaoFuncionario {
 	private Squad squad;
 	private Cargo cargo;
 	private int posicao;
-	
+	private TipoFuncionario tipofuncionario;
+
 	private String nome;
-	
+
 	private Long id_funcionario;
-	
+
+	public TipoFuncionario getTipofuncionario() {
+		return tipofuncionario;
+	}
+
+	public void setTipofuncionario(TipoFuncionario tipofuncionario) {
+		this.tipofuncionario = tipofuncionario;
+	}
 
 	public String getTermo_nomeacao() {
 		return termo_nomeacao;
@@ -46,8 +53,6 @@ public class RequisicaoFuncionario {
 		this.cargo = cargo;
 	}
 
-	
-	
 	public Squad getSquad() {
 		return squad;
 	}
@@ -72,8 +77,6 @@ public class RequisicaoFuncionario {
 		this.id_funcionario = id_funcionario;
 	}
 
-	
-
 	public int getPosicao() {
 		return posicao;
 	}
@@ -82,7 +85,6 @@ public class RequisicaoFuncionario {
 		this.posicao = posicao;
 	}
 
-	
 	public String getNome() {
 		return nome;
 	}
@@ -91,33 +93,23 @@ public class RequisicaoFuncionario {
 		this.nome = nome;
 	}
 
-
-
 	public Funcionario toFuncionario() {
-		
-		
-		
+
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome_funcionario(nome);
 		funcionario.setObservacoes(observacoes);
 		funcionario.setPosicao(posicao);
 		funcionario.setTermo_nomeacao(termo_nomeacao);
 
-		
-		
+		funcionario.setTipoFuncionario(tipofuncionario);
+
 		funcionario.setEmpresa(empresa);
-		
+
 		funcionario.setCargo(cargo);
 
-				
 		funcionario.setSquad(squad);
-		
+
 		return funcionario;
-		
-		
-		
-			
-		
 
 	}
 
@@ -131,18 +123,16 @@ public class RequisicaoFuncionario {
 		funcionario.setTermo_nomeacao(termo_nomeacao);
 
 		funcionario.setEmpresa(empresa);
-			
-		
-		funcionario.setCargo(cargo);
-		
-		funcionario.setSquad(null);
-			
-		funcionario.setSquad(squad);
-		
-		
-	return funcionario;
-	}
 
-	
+		funcionario.setTipoFuncionario(tipofuncionario);
+
+		funcionario.setCargo(cargo);
+
+		funcionario.setSquad(null);
+
+		funcionario.setSquad(squad);
+
+		return funcionario;
+	}
 
 }

@@ -27,109 +27,79 @@
 
 		<a class="itensnav" href="/funcionarios/listarFuncionario">Funcionarios</a>
 
-		<a class="itensnav" href="/squad/listarsquad">Squads</a>
-		
-		 <a class="itensnav" href="/empresa/listarempresa">Empresas</a> 
-		 
-		 <a	class="itensnav" href="/cargo/listarcargo">Cargos</a>
+		<a class="itensnav" href="/squad/listarsquad">Squads</a> <a
+			class="itensnav" href="/empresa/listarempresa">Empresas</a> <a
+			class="itensnav" href="/cargo/listarcargo">Cargos</a>
 
 
 
 	</nav>
 
 
+<main class="main">
+
+	<h1>Lista de Funcionários</h1>
+
+
+	<div class="tabelalistagem " >
 
 
 
-
-	<div th:each="funcionarioslista : ${Funcionario}">
-
-		<table border="1px">
+	
 
 
-
-
-
+		<table class="listagem" th:each="funcionarioslista : ${Funcionario}">
 			<tr>
-
-				<td>
-					<div>
-						ID Funcionario:<span th:text="${funcionarioslista.id_funcionario}">
-						</span>
-					</div>
-					<div>
-						Nome Funcionario:<span
-							th:text="${funcionarioslista.nome_funcionario}"> </span>
-					</div>
-					<div>
-						Termo de Nomeação:<span
-							th:text="${funcionarioslista.termo_nomeacao}"> </span>
-					</div>
-					<div>
-						Observações:<span th:text="${funcionarioslista.observacoes}">
-						</span>
-					</div>
-					<div>
-						Posição:<span th:text="${funcionarioslista.posicao}"> </span>
-					</div>
-					<div>
-						Nome da Squad:<span
-							th:text="${funcionarioslista?.squad?.nome_squad}"> </span>
-					</div>
-					<div>
-						Nome da Empresa:<span
-							th:text="${funcionarioslista.empresa.nome_empresa}"> </span>
-					</div>
-					<div>
-						Nome do Cargo:<span
-							th:text="${funcionarioslista.cargo.nome_cargo}"> </span>
-					</div>
-					<div>
-						Nível do Cargo:<span
-							th:text="${funcionarioslista.cargo.nivel_cargo}"> </span>
-					</div>
-					<div>
-						Step Cargo:<span th:text="${funcionarioslista.cargo.step_cargo}">
-						</span>
-					</div>
-					<div>
-						Valor da Hora: R$<span
-							th:text="${funcionarioslista.cargo.valor_hora}"> </span>
-					</div>
-					<div>
-						Faturamento: R$<span
-							th:text="${funcionarioslista.cargo.faturamento_cargo}"> </span>
-					</div>
-					<div>
-						Tipo do Cargo: <span
-							th:text="${funcionarioslista.cargo.tipo_cargo}"> </span>
-					</div> <br>
-
-				</td>
-
-
-
-				<td><a
-					th:href="@{alterar/{id}(id=${funcionarioslista.id_funcionario})}"><button>Alterar</button></a>
-
-
-					<a
-					th:href="@{deletar/{id}(id=${funcionarioslista.id_funcionario})}"><button>Excluir</button></a>
-
-				</td>
-
+				<th class="cabecalholistagem">Funcionario</th>
+				<th class="cabecalholistagem">Termo de Nomeação</th>
+				<th class="cabecalholistagem">Observações</th>
+				<th class="cabecalholistagem">Posição</th>
+				<th class="cabecalholistagem">Tipo de Funcionario</th>
+				<th class="cabecalholistagem">Cargo</th>
+				<th class="cabecalholistagem">squad</th>
+				<th class="cabecalholistagem">Nivel do Cargo</th>
+				<th class="cabecalholistagem">Nivel Cargo</th>
+				<th class="cabecalholistagem">Empresa</th>
+				<th class="cabecalholistagem">Valor da Hora</th>
+				<th class="cabecalholistagem">Faturamento</th>
+				
+			</tr>
+			<tr>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.nome_funcionario}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.termo_nomeacao}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.observacoes}"></span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.posicao}"> </span></td>
+				<td class="cabecalhoresultado"><span
+					th:text="${funcionarioslista.TipoFuncionario.tipo_funcionario_nome}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.cargo.nome_cargo}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista?.squad?.nome_squad}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.cargo.nivel_cargo}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.cargo.step_cargo}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.empresa.nome_empresa}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.cargo.valor_hora}">
+				</span></td>
+				<td class="cabecalhoresultado"><span th:text="${funcionarioslista.cargo.faturamento_cargo}"> </span></td>
+				<td class="cabecalhoresultado"><a th:href="@{/funcionarios/alterar/{id}(id=${funcionarioslista.id_funcionario})}"><button>Alterar</button></a>
+					
+				<a th:href="@{/funcionarios/deletar/{id}(id=${funcionarioslista.id_funcionario})}"><button>Excluir</button></a></td>
 
 			</tr>
 
-
-
-
-
 		</table>
+
+
 	</div>
 
 
-
+</main>
 
 
 </body>

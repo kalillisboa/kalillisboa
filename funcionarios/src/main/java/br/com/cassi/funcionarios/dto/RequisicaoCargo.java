@@ -26,7 +26,7 @@ public class RequisicaoCargo {
 	}
 
 	private float faturamento_cargo;
-	private String tipo_cargo;
+
 
 	public String getNome_cargo() {
 		return nome_cargo;
@@ -68,13 +68,9 @@ public class RequisicaoCargo {
 		this.faturamento_cargo = faturamento_cargo;
 	}
 
-	public String getTipo_cargo() {
-		return tipo_cargo;
-	}
 
-	public void setTipo_cargo(String tipo_cargo) {
-		this.tipo_cargo = tipo_cargo;
-	}
+
+	
 	
 	public CargoRepository getRepositorio() {
 		return repositorio;

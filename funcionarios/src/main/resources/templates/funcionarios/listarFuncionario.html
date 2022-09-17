@@ -26,7 +26,7 @@
 			
 			
 			<tr>
-			
+
 				<td>
 					<div>
 						ID Funcionario:<span th:text="${funcionarioslista.id_funcionario}">
@@ -47,47 +47,47 @@
 					<div>
 						Posição:<span th:text="${funcionarioslista.posicao}"> </span>
 					</div>
+					
+					
 					<div>
-						Nome da Squad:<span th:text="${funcionarioslista?.squad?.nome_squad}">
-						</span>
+						Tipo do Funcionário: <span
+							th:text="${funcionarioslista.TipoFuncionario.tipo_funcionario_nome}"> </span>
+					</div>					
+					
+					<div>
+					
+						Nome da Squad:<span
+							th:text="${funcionarioslista?.squad?.nome_squad}"> </span>
 					</div>
 					<div>
-						Nome da Empresa:<span th:text="${funcionarioslista.empresa.nome_empresa}">
-						</span>
+						Nome da Empresa:<span
+							th:text="${funcionarioslista.empresa.nome_empresa}"> </span>
 					</div>
 					<div>
-						Nome do Cargo:<span th:text="${funcionarioslista.cargo.nome_cargo}">
-						</span>
+						Nome do Cargo:<span
+							th:text="${funcionarioslista.cargo.nome_cargo}"> </span>
 					</div>
 					<div>
-						Nível do Cargo:<span th:text="${funcionarioslista.cargo.nivel_cargo}">
-						</span>
+						Nível do Cargo:<span
+							th:text="${funcionarioslista.cargo.nivel_cargo}"> </span>
 					</div>
 					<div>
 						Step Cargo:<span th:text="${funcionarioslista.cargo.step_cargo}">
 						</span>
 					</div>
 					<div>
-						Valor da Hora: R$<span th:text="${funcionarioslista.cargo.valor_hora}">
-						</span>
+						Valor da Hora: R$<span
+							th:text="${funcionarioslista.cargo.valor_hora}"> </span>
 					</div>
 					<div>
 						Faturamento: R$<span
 							th:text="${funcionarioslista.cargo.faturamento_cargo}"> </span>
 					</div>
-					<div>
-						Tipo do Cargo: <span th:text="${funcionarioslista.cargo.tipo_cargo}">
-						</span>
-					</div> <br>
-
+					
 				</td>
-			
-				
-			
-				<td>
-					
-					
-				
+	
+			<td>
+	
 				<a th:href ="@{alterar/{id}(id=${funcionarioslista.id_funcionario})}"><button >Alterar</button></a>
 				
 				

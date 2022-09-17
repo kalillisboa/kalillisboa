@@ -1,4 +1,4 @@
-package br.com.cassi.funcionarios.model;
+package br.com.cassi.funcionarios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

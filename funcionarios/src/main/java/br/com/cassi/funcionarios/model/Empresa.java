@@ -12,7 +12,8 @@ public class Empresa {
 	private String nome_empresa;
 
 	
-	
+	@OneToMany (mappedBy = "empresa")
+	private List<Contrato> contratosList;
 
 		
 	@OneToMany (mappedBy = "empresa")
@@ -25,6 +26,18 @@ public class Empresa {
 	}
 	public void setId_empresa(Long id_empresa) {
 		this.id_empresa = id_empresa;
+	}
+	public List<Contrato> getContratosList() {
+		return contratosList;
+	}
+	public void setContratosList(List<Contrato> contratosList) {
+		this.contratosList = contratosList;
+	}
+	public List<Funcionario> getFuncionarioList() {
+		return funcionarioList;
+	}
+	public void setFuncionarioList(List<Funcionario> funcionarioList) {
+		this.funcionarioList = funcionarioList;
 	}
 	public String getNome_empresa() {
 		return nome_empresa;

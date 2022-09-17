@@ -25,9 +25,12 @@
 		<label for="posicao">Posição: </label> 
 		<input type="text" id="posicao"	name="posicao"><br>
 		
-		<label for="tipo_funcionario">Tipo Funcionario: </label> 
-		<input type="text" id="tipo_funcionario"	name="tipo_funcionario"><br>
 		
+		<label for="tipofuncionario">Tipo Funcionario: </label>
+		  <select name="tipofuncionario" >
+		  <option name="tipofuncionario" th:each="tipofuncionarioLista : ${TipoFuncionario}" th:value="${tipofuncionarioLista.id_tipo_funcionario}" th:text="${tipofuncionarioLista.tipo_funcionario_nome}" /></option>
+		</select>
+		<br>
 	
 		<label for="cargo">Cargo: </label>
 		  <select name="cargo" >
