@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Listar Contratos</title>
+
+
+</head>
+
+
+
+<body>
+
+	<h1>Lista de Contratos</h1>
+
+	
+
+
+
+
+		<div th:each="contratoLista : ${Contratos}">
+
+			<table border="1px">
+
+				<tr>
+					<td>
+						<div>
+							Numero do Contrato: <span th:text="${contratoLista.numero_contrato}"></span>
+						</div>
+						
+						<div>
+							Numero do Contrato juridico: <span th:text="${contratoLista.numero_contrato_juridico}"></span>
+						</div>
+						<div>
+							Comentario: <span th:text="${contratoLista.comentario}"></span>
+						</div>
+						<div>
+							Empresa: <span th:text="${contratoLista.Empresa.nome_empresa}"></span>
+						</div>
+						<div>
+							Tipo Ação: <span th:text="${contratoLista.tipo_acao}"></span>
+						</div> <br>
+						</td>
+						<td>
+						<a th:href ="@{alterar/{id}(id=${contratoLista.id_contrato})}"><button>Alterar</button></a>
+						<a th:href ="@{deletar/{id}(id=${contratoLista.id_contrato})}"><button>Excluir</button></a>
+						</td>
+				</tr>
+
+			</table>
+			
+		</div>
+		
+</body>
+
+
+
+</html>
