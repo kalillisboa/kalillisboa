@@ -3,12 +3,21 @@ import './App.css';
 import Formulario from './Formulario';
 import Tabela from './Tabela';
 import { useState, useEffect } from 'react';
+import {usuario} from './objetos/objetos';
+
+
 
 function App() {
+
+
+
 
   //UseState
   const [btnCadastrar, setBtnCadastrar] = useState(true);
   const [usuarios, setUsuarios] = useState([]);
+  const [objUsuarios, setObjUsuarios] = useState (usuario)
+
+  
 
   //UseEffect
 
@@ -24,12 +33,17 @@ function App() {
 
 
 
+
+
+
+
+
   return (
 
     <div>
 
-      
-      <Formulario botao={btnCadastrar} />
+      <p>{JSON.stringify(objUsuarios)}</p>
+      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar}/>
 
       <Tabela usuarios={usuarios}/>
 
@@ -39,6 +53,9 @@ function App() {
 
     </div>
   );
+  
 }
 
 export default App;
+
+

@@ -1,13 +1,11 @@
-function Formulario({ botao }) {
-    let teste = 1;
-
+function Formulario({botao , eventoTeclado}) {
 
     return (
 
 
         <form>
-            <input type='text' placeholder='Nome' className='form-control' />
-            <input type='text' placeholder='Senha' className='form-control' />
+            <input type='text' onChange={eventoTeclado} name='nome_usuario' placeholder='Nome' className='form-control' />
+            <input type='text' onChange={eventoTeclado} name='senha_usuario' placeholder='Senha' className='form-control' />
 
 
 
