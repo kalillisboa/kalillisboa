@@ -33,8 +33,56 @@ function App() {
 
 
 
+//obtendo dados formulário
+const aoDigitar = (evento) => {
+
+    
+  setObjUsuarios({...objUsuarios, [evento.target.name]:evento.target.value})
+
+}
 
 
+//cadastrar produto
+
+const cadastrarUsuario = () => {
+
+  fetch('http://localhost:8080/cadastrar',{
+    method:'post',
+    body:JSON.stringify(objUsuarios),
+    headers:{
+      'Content-type' : 'application/json',
+      'Accept' : 'application/json'
+    }
+
+})
+  .then( retorno => retorno.json() )
+  .then(retorno_convertido =>{
+    
+
+    if(retorno_convertido.mensagem !== undefined){
+
+      alert(retorno_convertido.mensagem);
+
+    }else{ 
+
+      setUsuarios([...usuarios, retorno_convertido]);
+      alert('Usuario Cadastrado com sucesso');
+      limpaFormulario();
+    }
+
+  }) 
+
+
+}
+
+
+//limpar formulario 
+
+const limpaFormulario = () => {
+
+  setObjUsuarios(usuario);
+
+}
 
 
 
@@ -42,8 +90,8 @@ function App() {
 
     <div>
 
-      <p>{JSON.stringify(objUsuarios)}</p>
-      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar}/>
+     
+      <Formulario botao={btnCadastrar} eventoTeclado={aoDigitar} cadastrarUsuario={cadastrarUsuario} obj={objUsuarios} />
 
       <Tabela usuarios={usuarios}/>
 

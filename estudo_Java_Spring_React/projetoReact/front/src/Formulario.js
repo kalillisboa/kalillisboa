@@ -1,11 +1,11 @@
-function Formulario({botao , eventoTeclado}) {
+function Formulario({botao , eventoTeclado, cadastrarUsuario, obj}) {
 
     return (
 
 
         <form>
-            <input type='text' onChange={eventoTeclado} name='nome_usuario' placeholder='Nome' className='form-control' />
-            <input type='text' onChange={eventoTeclado} name='senha_usuario' placeholder='Senha' className='form-control' />
+            <input type='text' value={obj.nome_usuario} onChange={eventoTeclado} name='nome_usuario' placeholder='Nome' className='form-control' />
+            <input type='text' value={obj.senha_usuario} onChange={eventoTeclado} name='senha_usuario' placeholder='Senha' className='form-control' />
 
 
 
@@ -14,7 +14,7 @@ function Formulario({botao , eventoTeclado}) {
                 botao
                 ?
 
-            <input type='button' value='Cadastrar' className=' btn btn-primary' />
+            <input type='button' value='Cadastrar' className=' btn btn-primary' onClick={cadastrarUsuario}/>
 
                 :
 
