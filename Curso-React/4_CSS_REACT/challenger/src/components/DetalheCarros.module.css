@@ -1,0 +1,7 @@
+.lista_carros {
+    text-align: center;
+    color: red;
+    border: 1px solid;
+    margin: 10px 10px;
+    display: inline-block;
+}
