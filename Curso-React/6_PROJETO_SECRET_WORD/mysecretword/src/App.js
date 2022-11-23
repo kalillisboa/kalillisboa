@@ -41,7 +41,7 @@ function App() {
 
 
 
-  const pickWordAndCategory = () => {
+  const pickWordAndCategory = useCallback(() => {
 
     const categories = Object.keys(wordsList);
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)];
@@ -54,11 +54,11 @@ function App() {
 
     return { category, word }
 
-  }
+  }, [wordsList]);
 
 
 
-  const startGame = () => {
+  const startGame = useCallback(() => {
 
     const { category, word } = pickWordAndCategory();
 
@@ -67,20 +67,15 @@ function App() {
 
     wordLetter = wordLetter.map((letters) => letters.toLowerCase());
 
-
-
-    console.log(category, word, wordLetter);
-
-
     setPickedWord(word);
     setPickedCategory(category);
     setLetters(wordLetter);
 
-
-
     setGameStage(stages[1].nome);
 
-  }
+  }, [pickWordAndCategory]);
+
+  console.log(pickedCategory , pickedWord);
 
   const verifyLetter = (letter) => {
 
@@ -125,11 +120,41 @@ function App() {
     }
   }, [guesses]);
 
+  const resetGame = () => {
+
+    setGuesses(3);
+    setScore(0);
+    setWrongLetters([]);
+    setGuessedLetters([]);
+
+    startGame();
+
+
+  }
 
 
 
-  console.log(guessedLetters);
-  console.log(wrongLetters);
+  useEffect(() => {
+
+    const uniqueLetters = [...new Set(letters)];
+
+    if (guessedLetters.length === uniqueLetters.length) {
+
+      if (guessedLetters.length || uniqueLetters.length)
+        setScore((actualScore) => actualScore += 100);
+
+        startGame();
+      
+
+    }
+
+  }, [guessedLetters, letters, startGame]);
+
+
+  console.log("letras advinhadas: " + guessedLetters)
+  console.log("letras erradas: " + wrongLetters)
+
+
   return (
     <div className="App">
       {gameStage === "start" && <StartScreen startGame={startGame} />}
@@ -147,7 +172,7 @@ function App() {
 
 
       />}
-      {gameStage === "over" && <GameOver />}
+      {gameStage === "over" && <GameOver resetGame={resetGame} score={score} />}
 
 
 

@@ -1,0 +1,29 @@
+.Jogo .letra , .quadrado {
+
+border: solid 5px;
+display: flex;
+width: 120px;
+height: 120px;
+background-color: white;    
+font-size: 70px;
+font-weight: bold;
+align-items: center;
+justify-content: center;
+
+margin: 20px 0px;
+
+
+}
+
+
+.Jogo .tabelaJogo {
+
+    border: rgb(247, 90, 0) solid 20px;
+    display: flex;
+    margin: 10px auto;
+    padding: 10px;
+    justify-content: center;
+    
+    
+
+}

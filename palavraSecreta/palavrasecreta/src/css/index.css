@@ -1,0 +1,40 @@
+body, html {
+    
+    height: 100%;
+    
+
+    background: rgb(255,175,189);
+    background: linear-gradient(180deg, rgba(255,175,189,1) 30%, rgba(255,195,160,1) 64%);
+}
+
+
+body{
+
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    
+
+}
+
+button{
+
+
+    border-radius: 20px;
+    width: 250px;
+    height: 80px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(39, 180, 46);
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    transition: 0.4s;
+    margin-top: 50px;
+}
+
+button:hover {
+
+    background-color: rgb(248, 8, 48);
+
+
+}

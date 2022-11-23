@@ -1,8 +1,21 @@
 import React from 'react'
 
-const GameOver = () => {
+const GameOver = ({resetGame , score}) => {
   return (
-    <div>GameOver</div>
+    <div>
+
+    <h1>Game Over</h1>
+
+    <p>Sua Pontuação foi de: {score}</p>
+
+    <button onClick={()=>{
+
+      resetGame();
+
+
+    }}>Resetar Jogo</button>
+
+    </div>
   )
 }
 
