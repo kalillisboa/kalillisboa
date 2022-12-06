@@ -1,0 +1,27 @@
+.Navbar {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.Navbar  a { 
+
+    text-decoration: none;
+    margin: 0 10px;
+    padding:  5px;
+    color: #000;
+
+}
+
+a:hover {
+
+    color: #ccc;
+
+}
+
+.active { 
+
+    background-color: rgb(163, 0, 0);
+    color: #ccc;
+}

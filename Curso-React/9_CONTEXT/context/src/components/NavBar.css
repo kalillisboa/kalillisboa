@@ -1,0 +1,25 @@
+div{
+    text-align: center;
+
+}
+
+nav{
+ 
+   display: flex;
+   justify-content: center;
+   flex-direction: row; 
+
+}
+
+nav a {
+
+    margin: 10px 10px;
+
+
+}
+
+.active {
+
+background-color: red;
+
+}
